@@ -1,5 +1,56 @@
 # Changelog
 
+## 8.6.0
+
+- Bump deCONZ to 2.32.5 [[CHANGELOG](https://github.com/dresden-elektronik/deconz-rest-plugin/releases/tag/v2.32.5)]
+- Renaming from add-on to app complete
+- HTTPS disabled
+
+## 8.5.3
+
+- Align ingress colors with Home Assistant
+
+## 8.5.2
+
+- Add configurable OTA update switches for Bosch, IKEA and OSRAM/LEDVANCE (default is off)
+- Add Bosch Smart Home OTA update script (Official repo)
+
+## 8.5.1
+
+- Add more debug options
+
+## 8.5.0
+
+- Fix discovery script
+
+## 8.4.0
+
+- Ingress entry page revised (for example, light and dark mode)
+- Update DOCS.md and a few naming corrections
+- Expand English translation
+
+## 8.3.0
+
+- Bump deCONZ to 2.31.2 [[CHANGELOG](https://github.com/dresden-elektronik/deconz-rest-plugin/releases/tag/v2.31.2)]
+
+## 8.2.0
+
+- Bump deCONZ to 2.30.2 [[CHANGELOG](https://github.com/dresden-elektronik/deconz-rest-plugin/releases/tag/v2.30.2)]
+
+## 8.1.0
+
+- Bump deCONZ to 2.29.5 [[CHANGELOG](https://github.com/dresden-elektronik/deconz-rest-plugin/releases/tag/v2.29.5)]
+
+## 8.0.0
+
+- Use openbox instead of dwm as window manager
+
+## 7.0.0
+
+- Bump deCONZ to 2.28.1
+- Use debian bookworm for all arch types
+- Use dwm instead of wmii as window manager
+
 ## 6.23.0
 
 - Bump deCONZ to 2.25.3
@@ -23,7 +74,7 @@
 ## 6.18.0
 
 - Bump deCONZ to 2.20.1
- 
+
 ## 6.17.1
 
 - Bump deCONZ to 2.19.3

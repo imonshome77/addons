@@ -1,6 +1,105 @@
 # Changelog
 
+## 2.16.3
+- Ignore ephemeral temporary settings files in migration
+
+## 2.16.2
+- Fix TREL being disabled by default in beta mode
+
+## 2.16.1
+- Fix listen address of OTBR Web UI
+
+## 2.16.0
+- Add beta toggle to switch between Thread 1.3 (stable) and Thread 1.4 (beta)
+- Beta mode uses OpenThread's built-in mDNS instead of mDNSResponder
+
+## 2.15.3
+- Fix inconsistent startup for adapters that remap hardware flow control pins for firmware flashing.
+
+## 2.15.2
+- Add baudrate list option 1000000 (Nordic Semiconductor nRF Connect SDK firmware)
+
+## 2.15.1
+- Make radio spinel recovery more reliable by clearing source match tables before restoring
+
+## 2.15.0
+- Automatically migrate the active dataset to a new adapter when changing the addon serial port path.
+
+## 2.14.0
+- Remove firmware flashing from the addon, this is now handled by Core 2025.7.0.
+
+## 2.13.0
+- Bump to OTBR POSIX version b067e5ac (2025-01-13 22:32:22 -0500)
+- Bump universal-silabs-flasher to 0.0.28
+- Remove dataset deletion REST API backwards compatibility patch. The minimum Core version for this add-on is now 2023.9.0
+
+## 2.12.4
+
+- Fix OTBR addon does not start after updating containerd.io to 1.7.24-1
+
+## 2.12.3
+
+- Enable recovery mechanism from "radio tx timeout" errors
+- Increase the number of mesh header fragmentation tag entries to address
+  "Failed to get forwarded frame priority" notice messages in logs. Note that
+  these types of messages are non-critical (default priority will be applied in
+  that case).
+- Make some compile time configurations via project header file
+
+## 2.12.2
+
+- Update flasher script to work with Home Assistant Yellow with CM5
+
+## 2.12.1
+- Fix possible race condition between otbr-agent-configure and otbr-agent-rest-discovery
+  services causing failed startup ([#3826](https://github.com/home-assistant/addons/issues/3826))
+
+## 2.12.0
+- Bump universal-silabs-flasher to 0.0.23
+- Bump OTBR firmwares to latest versions
+- Bump to OTBR POSIX version b041fa52daa (2024-11-14 08:18:28 -0800)
+- Add radio firmware version to discovery information
+
+## 2.11.1
+
+-  Fix issue with USB TI CC2652 based devices
+
+## 2.11.0
+
+- Bump to OTBR POSIX version ff7227ea9a2 (2024-09-25 14:54:08 -0700)
+- Make log output unbuffered
+- Avoid ipset errors when firewall is disabled
+
+## 2.10.0
+
+- Bump to OTBR POSIX version b66cabfaa0 (2024-08-14 08:01:56 -0700)
+- Avoid OTBR Web spamming system console
+- Bump universal SiLabs flasher to 0.0.22
+
+## 2.9.1
+
+- Abort firmware flasher if network device is selected
+
+## 2.9.0
+
+- Avoid triggering reset/boot loader on TI CC2652 based devices
+
+## 2.8.0
+
+- Bump to OTBR POSIX version 41474ce29a (2024-06-21 08:41:31 -0700)
+
+## 2.7.0
+
+- Support auto firmware updates for Sonoff ZBDongle-E
+- Support auto firmware updates for SMLIGHT SLZB-07
+- Bump universal SiLabs flasher to 0.0.20
+
+## 2.6.0
+
+- Add support for network sockets using socat
+
 ## 2.5.1
+
 - Support Home Assistant Connect ZBT-1.
 
 ## 2.5.0

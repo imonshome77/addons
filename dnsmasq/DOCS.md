@@ -1,26 +1,26 @@
-# Home Assistant Add-on: Dnsmasq
+# Home Assistant App: Dnsmasq
 
 ## Installation
 
-Follow these steps to get the add-on installed on your system:
+Follow these steps to get the app (formerly known as add-on) installed on your system:
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Dnsmasq" add-on and click it.
+1. In Home Assistant, go to **Settings** > **Apps** > **Install app**.
+2. Find the "Dnsmasq" app and click it.
 3. Click on the "INSTALL" button.
 
 ## How to use
 
-The add-on has a couple of options available. For more detailed instructions
-see below. The basic thing to get the add-on running would be:
+The app has a couple of options available. For more detailed instructions
+see below. The basic thing to get the app running would be:
 
-1. Start the add-on.
+1. Start the app.
 
 ## Configuration
 
-The Dnsmasq add-on can be tweaked to your likings. This section
-describes each of the add-on configuration options.
+The Dnsmasq app can be tweaked to your likings. This section
+describes each of the app configuration options.
 
-Example add-on configuration:
+Example app configuration:
 
 ```yaml
 defaults:
@@ -122,6 +122,10 @@ The target name. Note that this only works for targets which are names from DHCP
 ### Option: `log_queries` (required) 
 
 Log all DNS requests. Defaults to `false`.
+
+### Option: `cache_size`
+
+Sets the size of the Dnsmasq cache. The default setting is 150. If this is set to 0 this disables caching. Note that huge cache sizes can create performance problems.
 
 ## Support
 

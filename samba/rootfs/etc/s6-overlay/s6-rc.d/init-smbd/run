@@ -1,4 +1,6 @@
 #!/command/with-contenv bashio
+# vim: ft=bash
+# shellcheck shell=bash
 # ==============================================================================
 # Prepare the Samba service for running
 # ==============================================================================
@@ -12,6 +14,8 @@ if ! bashio::config.has_value 'username' || ! bashio::config.has_value 'password
     bashio::exit.nok "Setting a username and password is required!"
 fi
 
+bashio::config.require "enabled_shares" "Samba is a tool for sharing folders. Starting it without sharing any folders defeats the purpose."
+
 # Read hostname from API or setting default "hassio"
 HOSTNAME=$(bashio::info.hostname)
 if bashio::var.is_empty "${HOSTNAME}"; then
@@ -22,7 +26,10 @@ bashio::log.info "Hostname: ${HOSTNAME}"
 
 # Get supported interfaces
 for interface in $(bashio::network.interfaces); do
-    interfaces+=("${interface}")
+    interface_enabled=$(bashio::network.enabled "${interface}")
+    if bashio::var.true "${interface_enabled}"; then
+        interfaces+=("${interface}")
+    fi
 done
 if [ ${#interfaces[@]} -eq 0 ]; then
     bashio::exit.nok 'No supported interfaces found to bind on.'
@@ -30,7 +37,8 @@ fi
 bashio::log.info "Interfaces: $(printf '%s ' "${interfaces[@]}")"
 
 # Generate Samba configuration.
-jq ".interfaces = $(jq -c -n '$ARGS.positional' --args -- "${interfaces[@]}")" /data/options.json \
+jq ".interfaces = $(jq -c -n '$ARGS.positional' --args -- "${interfaces[@]}") |
+    .enabled_shares.[] |= ascii_downcase" /data/options.json \
     | tempio \
       -template /usr/share/tempio/smb.gtpl \
       -out /etc/samba/smb.conf

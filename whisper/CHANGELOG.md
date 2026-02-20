@@ -1,5 +1,57 @@
 # Changelog
 
+## 3.1.0
+
+- Fix model selection for language
+- Prefer Parakeet only for English (detection fails for other languages)
+- Add missing `onnx_asr` dependency
+
+## 3.0.1
+
+- Add support for `sherpa-onnx` and Nvidia's parakeet model
+- Prefer parakeet model in `auto`
+- Add support for GigaAM for Russian
+- Add `stt_library` option to choose backend
+
+## 2.6.0
+
+- Upgrade to Debian bookworm
+- Add support for HuggingFace transformers Whisper models
+
+## 2.5.0
+
+- Added configuration mapping to access local models.
+- Updated documentation about `custom_model` usage.
+
+## 2.4.0
+
+- Add "auto" for model and beam size (0) to select values based on CPU
+
+## 2.3.1
+
+- Move `turbo` down the list closer to `large` to avoid confusion
+
+## 2.3.0
+
+- Bump `wyoming-whisper` to 2.3.0 (`faster-whisper` to 1.1.0)
+- Supports model `turbo` for faster processing
+
+## 2.2.0
+
+- Bump `wyoming-whisper` to 2.2.0 (`faster-whisper` to 1.0.3)
+
+## 2.1.2
+
+- Fix excluding models files from backup
+
+## 2.1.1
+
+- Exclude `data/models*` files from backup
+
+## 2.1.0
+
+- Add distil-large-v3 `model` option
+
 ## 2.0.0
 
 - Add more models for `model` option

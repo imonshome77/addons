@@ -1,5 +1,43 @@
 # Changelog
 
+## 4.0.0
+
+- Drop builds of unsupported architectures
+- Update base image to Alpine 3.23 (base image tag 3.23-2025.12.2)
+
+## 3.15.0
+
+- Support HTTP/3 (QUIC)
+
+## 3.14.0
+
+- Listen over IPv6, since true IPv6 support for add-ons is now available
+
+## 3.13.0
+
+- Update Alpine Linux to 3.22 (nginx 1.28.x)
+- Update to current Mozilla intermediate SSL config
+
+## 3.12.0
+
+- Add origin and X-Forwarded-Proto headers to fix origin issues affecting Portainer and other addons
+
+## 3.11.1
+
+- Update to new nginx http2 directive. This also suppress a deprecation warning.
+
+## 3.11.0
+
+- Update Alpine Linux to 3.20 (nginx 1.26.x)
+
+## 3.10.1
+
+- Make `real_ip_from` optional through an empty default value
+
+## 3.10.0
+
+- Supporting TCP Proxy Protocol
+
 ## 3.9.0
 
 - Add `map_hash_bucket_size` to add support for longer matches in `map`
@@ -11,7 +49,7 @@
 ## 3.7.0
 
 - Modify `server_names_hash_bucket_size` to add support for longer domain names
-  
+
 ## 3.6.0
 
 - Add port to Host header to fix origin issues affecting ESPHome and other addons

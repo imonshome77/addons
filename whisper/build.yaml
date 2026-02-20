@@ -1,9 +1,6 @@
 ---
 build_from:
-  amd64: ghcr.io/home-assistant/amd64-base-debian:bullseye
-  aarch64: ghcr.io/home-assistant/aarch64-base-debian:bullseye
-codenotary:
-  signer: notary@home-assistant.io
-  base_image: notary@home-assistant.io
+  amd64: ghcr.io/home-assistant/amd64-base-debian:bookworm
+  aarch64: ghcr.io/home-assistant/aarch64-base-debian:bookworm
 args:
-  WYOMING_WHISPER_VERSION: 2.1.0
+  WYOMING_WHISPER_VERSION: 3.1.0

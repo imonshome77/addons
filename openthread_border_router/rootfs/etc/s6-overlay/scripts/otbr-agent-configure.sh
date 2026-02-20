@@ -1,7 +1,10 @@
 #!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
 # Configure OTBR depending on add-on settings
 # ==============================================================================
+
+ot-ctl trel enable
 
 if bashio::config.true 'nat64'; then
     bashio::log.info "Enabling NAT64."

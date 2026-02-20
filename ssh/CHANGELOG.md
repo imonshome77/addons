@@ -1,5 +1,59 @@
 # Changelog
 
+## 10.0.1
+
+- Fix default shell
+
+## 10.0.0
+
+- Upgrade to Alpine 3.23
+- Upgrade Home Assistant CLI to 4.46.0
+- Use ttyd from Alpine package repository
+
+## 9.22.0
+
+- Upgrade Home Assistant CLI to 4.45.0
+
+## 9.21.0
+
+- Remove support for armhf, armv7, and i386 architectures
+- Upgrade Home Assistant CLI to 4.44.0
+
+## 9.20.1
+
+- Fix default shell
+
+## 9.20.0
+
+- Upgrade Home Assistant CLI to 4.41.0
+- Upgrade to Alpine Linux 3.22
+- Upgrade libwebsockets to 4.4.1
+
+## 9.19.0
+
+- Disable keyboard interactive authentication method if keys are used
+
+## 9.18.0
+
+- Upgrade Home Assistant CLI to 4.39.0
+
+## 9.17.0
+
+- Upgrade Home Assistant CLI to 4.38.0
+- Upgrade libwebsockets to 4.3.5
+
+## 9.16.0
+
+- Upgrade ttyd to 1.7.7 (fixes copy to clipboard using shift and drag)
+
+## 9.15.0
+
+- Upgrade Home Assistant CLI to 4.36.0
+
+## 9.14.0
+
+- Upgrade Home Assistant CLI to 4.34.0
+
 ## 9.13.0
 
 - Enable ha command completion for non-login shell (e.g. the web terminal)

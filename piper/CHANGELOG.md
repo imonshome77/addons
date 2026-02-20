@@ -1,5 +1,59 @@
 # Changelog
 
+## 2.2.2
+
+- Upgrade to `wyoming-piper` 2.2.2 (wheel fix)
+
+## 2.2.1
+
+- Upgrade to `wyoming-piper` 2.2.1
+- Add support for new Chinese voices
+
+## 2.1.1
+
+- Upgrade to `wyoming-piper` 2.1.1
+- Streaming is enabled by default (remove `streaming` option)
+- Remove `max_piper_procs` option (no longer applicable)
+- Drop support for `armv7`
+- Fix zeroconf discovery
+
+## 1.6.4
+
+- Add missing voice for Argentinian Spanish (daniela)
+
+## 1.6.3
+
+- Bump wyoming to 1.7.2 to fix event data error
+
+## 1.6.2
+
+- Split sentences on numbered lists and remove asterisks surrounding words
+- Remove asterisks at the start of a line (markdown list)
+- Add new voices for Malayalam (arjun, meera)
+- Add new voice for Nepali (chitwan)
+- Add new voices for Hindi (pratham, priyamvada)
+- Add new voice for Argentinian Spanish (daniela)
+
+## 1.6.0
+
+- Add support for streaming audio on sentence boundaries
+
+## 1.5.4
+
+- Add voices for Dutch: ronnie, pim
+- Add voice for English: sam
+- Add voice for Persian/English: reza_ibrahim
+- Add voice for Persian: ganji
+- Add voices for Portuguese (Brazilian): cadu, jeff
+
+## 1.5.2
+
+- Add missing voices supported by Piper (gwryw_gogleddol, bryce, john, norman and paola)
+
+## 1.5.1
+
+- Add voice for English: cori
+
 ## 1.5.0
 
 - Add voices for Persian: amir, gyro

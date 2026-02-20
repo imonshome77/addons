@@ -3,6 +3,11 @@ configuration:
   device:
     name: Device
     description: The Z-Wave controller device.
+  socket:
+    name: Socket
+    description: >-
+      Instead of using a physical device, you can connect to a Z-Wave adapter
+      via a socket.
   emulate_hardware:
     name: Enable Emulated Hardware
     description: >-
@@ -25,9 +30,12 @@ configuration:
   network_key:
     name: Network Key
     description: >-
-      In previous versions of the addon, this was the only key that was needed.
+      In previous versions of the app, this was the only key that was needed.
       With the introduction of S2 security inclusion in zwave-js, this option
       has been deprecated.
+  rf_region:
+    name: Radio Frequency Region
+    description: The radio frequency region that the controller should use.
   s0_legacy_key:
     name: S0 Legacy Key
     description: >-
@@ -48,11 +56,21 @@ configuration:
     description: >-
       This must be provided in order to include devices with the S2
       Unauthenticated security class.
+  lr_s2_access_control_key:
+    name: Z-Wave Long Range S2 Access Control Key
+    description: >-
+      This must be provided in order to include devices using Z-Wave
+      Long Range with the S2 Access Control security class.
+  lr_s2_authenticated_key:
+    name: Z-Wave Long Range S2 Authenticated Key
+    description: >-
+      This must be provided in order to include devices using Z-Wave
+      Long Range with the S2 Authenticated security class.
   soft_reset:
     name: 500 series controller soft-reset
     description: >-
-      This setting tells the add-on how to handle soft-resets for 500 series
-      controllers. The default setting, Automatic, instructs the add-on to
+      This setting tells the app how to handle soft-resets for 500 series
+      controllers. The default setting, Automatic, instructs the app to
       automatically detect whether or not this needs to be enabled. The
       default setting should work for most users, so only change this setting
       if you know what you are doing and/or you are asked to.
@@ -64,9 +82,16 @@ configuration:
       recover on its own if it's capable of doing so. While the controller is
       unresponsive, commands will start to fail and nodes may randomly get
       marked as dead. If a controller is not able to recover on its own, you
-      will need to restart the add-on to attempt recovery. In most cases, users
+      will need to restart the app to attempt recovery. In most cases, users
       will never need to use this feature, so only change this setting if you
       know what you are doing and/or you are asked to.
+  disable_watchdog:
+    name: Disable Z-Wave JS (hardware) watchdog
+    description: >-
+      This setting will prevent Z-Wave JS from enabling the hardware watchdog
+      on supporting controllers. In most cases, users will never need to use
+      this feature, so only change this setting if you know what you are doing
+      and/or you are asked to.
   safe_mode:
     name: Enable safe mode
     description: >-

@@ -1,5 +1,110 @@
 # Changelog
 
+## 8.2.2
+
+- Install make and gcc as well
+
+## 8.2.1
+
+- Install the necessary packages to allow BLE to work
+
+## 8.2.0
+
+- Switch to the new [matter.js-based Matter Server](https://github.com/matter-js/matterjs-server) when enabling the **Beta** option
+  - Existing data is migrated automatically with no user action required
+  - Users can switch back to the Python-based Matter Server at any time
+- Add Node.js to the add-on container
+
+## 8.1.2
+
+- Bump Python Matter Server to [8.1.2](https://github.com/matter-js/python-matter-server/releases/tag/8.1.2)
+
+## 8.1.1
+
+- Bump Python Matter Server to [8.1.1](https://github.com/matter-js/python-matter-server/releases/tag/8.1.1)
+
+## 8.1.0
+
+- Bump Python Matter Server to [8.1.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/8.1.0)
+- Update bashio to 0.17.1
+
+## 8.0.0
+
+- Bump Python Matter Server to [8.0.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/8.0.0)
+
+## 7.0.0
+
+- Bump Python Matter Server to [7.0.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/7.0.1)
+  - This updates Matter to 1.4
+- Update base image components to what is being used in Home Assistant Debian
+  base images:
+  - Update tempio to 2024.11.2
+  - Update s6-overlay to 3.1.6.2
+  - Update bashio to 0.16.2
+
+## 6.6.1
+
+- Bump Python Matter Server to [6.6.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.6.1)
+
+## 6.6.0
+
+- Bump Python Matter Server to [6.6.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.6.0)
+
+## 6.5.1
+
+- Bump Python Matter Server to [6.5.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.5.1)
+
+## 6.5.0
+
+- Bump Python Matter Server to [6.5.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.5.0)
+
+## 6.4.2
+
+- Add support for custom Matter Server arguments
+- Add support to install custom Matter Server and Matter SDK (CHIP) versions
+
+## 6.4.1
+
+- Bump Python Matter Server to [6.4.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.4.0)
+
+## 6.4.0
+
+- Use add-on config directory as update directory
+
+## 6.3.1
+
+- Fix Matter SDK log level when using beta flag
+
+## 6.3.0
+
+- Bump Python Matter Server to [6.3.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.3.0)
+
+## 6.2.1
+
+- Bump Python Matter Server to [6.2.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.2.1)
+
+## 6.1.2
+
+- Bump Python Matter Server to [6.1.2](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.1.2)
+
+## 6.1.1
+
+- Bump Python Matter Server to [6.1.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.1.1)
+
+## 6.1.0
+
+- Bump Python Matter Server to [6.1.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.1.0)
+  - This update is required for Home Assistant Core 2024.6.0
+
+## 6.0.0
+
+- Bump Python Matter Server to [6.0.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.0.0)
+  - This updates Matter to 1.3
+
+## 5.6.0
+
+- Bump Python Matter Server to [5.10.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.10.0)
+
 ## 5.5.1
 
 - Fix logging in case fallback method for determining the primary network interface is used

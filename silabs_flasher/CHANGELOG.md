@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.4.0
+
+- Upgrade to Alpine 3.22
+- Update universal-silabs-flasher to v0.0.36
+
+## 0.3.4
+
+- Make custom ezsp baudrate a truly optional configuration
+
+## 0.3.3
+
+- Allow to start universal-silabs-flasher with custom ezsp baudrate
+
+## 0.3.2
+
+- Update flasher script to work with Home Assistant Yellow with CM5
+
+## 0.3.1
+- Update firmwares to EmberZNet 7.4.4
+- Update universal-silabs-flasher to v0.0.25
+
+## 0.3.0
+- Update firmwares to EmberZNet 7.4.3
+- Update universal-silabs-flasher to v0.0.22
+
 ## 0.2.3
 
 - Upgrade to Alpine 3.19

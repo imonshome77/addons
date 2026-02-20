@@ -4,12 +4,13 @@ FROM ${BUILD_FROM}
 # Install Whisper
 WORKDIR /usr/src
 ARG WYOMING_WHISPER_VERSION
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 RUN \
     apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
-        netcat \
+        netcat-traditional \
         python3 \
         python3-dev \
         python3-pip \
@@ -18,7 +19,14 @@ RUN \
         setuptools \
         wheel \
     && pip3 install --no-cache-dir \
-        "wyoming-faster-whisper @ https://github.com/rhasspy/wyoming-faster-whisper/archive/refs/tags/v${WYOMING_WHISPER_VERSION}.tar.gz" \
+        "wyoming[zeroconf]==1.8.0" \
+        "wyoming-faster-whisper[sherpa] @ https://github.com/rhasspy/wyoming-faster-whisper/archive/refs/tags/v${WYOMING_WHISPER_VERSION}.tar.gz" \
+        'transformers==4.52.4' \
+        'onnx-asr[cpu,hub]==0.7.0' \
+    \
+    && pip3 install --no-cache-dir \
+        --index-url 'https://download.pytorch.org/whl/cpu' \
+        'torch==2.6.0' \
     \
     && apt-get purge -y --auto-remove \
         build-essential \

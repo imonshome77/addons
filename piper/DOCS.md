@@ -1,16 +1,16 @@
-# Home Assistant Add-on: Piper
+# Home Assistant App: Piper
 
 ## Installation
 
-Follow these steps to get the add-on installed on your system:
+Follow these steps to get the app installed on your system:
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Piper" add-on and click it.
+1. In Home Assistant, go to **Settings** > **Apps** > **Install app**.
+2. Find the "Piper" app and click it.
 3. Click on the "INSTALL" button.
 
 ## How to use
 
-After this add-on is installed and running, it will be automatically discovered
+After this app is installed and running, it will be automatically discovered
 by the Wyoming integration in Home Assistant. To finish the setup,
 click the following my button:
 
@@ -59,23 +59,13 @@ Controls the variability of audio by adding noise during audio generation. The e
 
 Controls the variability of speaking cadence (phoneme widths). The effect highly depends on the voice itself, but in general a value of 0 removes variability and values above 1 produce extreme stutters and pauses.
 
-### Option: `max_piper_procs`
-
-Number of Piper processes to run simultaneously (default is 1). Each Piper process loads a single voice model into RAM, so using multiple voices at the same time requires:
-
-- Starting/stopping Piper processes as voices are used, or
-- Running more Piper processes
-
-This add-on will start a Piper process for each requested voice up to `max_piper_procs`. After that, the least recently used voice will be stopped.
-Increase `max_piper_procs` if you need to quickly switch between multiple voices, but beware that this will increase RAM usage by the add-on.
-
 ### Option: `update_voices`
 
-Download the list of new voices automatically every time the add-on starts. You must also reload the Wyoming integration for Piper in Home Assistant to see new voices.
+Download the list of new voices automatically every time the app starts. You must also reload the Wyoming integration for Piper in Home Assistant to see new voices.
 
 ### Option: `debug_logging`
 
-Print DEBUG level messages to the add-on's log.
+Print DEBUG level messages to the app's log.
 
 ## Custom Voices
 

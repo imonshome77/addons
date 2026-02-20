@@ -1,45 +1,52 @@
-# Home Assistant Add-on: Samba share
+# Home Assistant App: Samba share
 
 ## Installation
 
-Follow these steps to get the add-on installed on your system:
+Follow these steps to get the app (formerly known as add-on) installed on your system:
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Samba share" add-on and click it.
+1. In Home Assistant, go to **Settings** > **Apps** > **Install app**.
+2. Find the "Samba share" app and click it.
 3. Click on the "INSTALL" button.
 
 ## How to use
 
 1. In the configuration section, set a username and password.
    You can specify any username and password; these are not related in any way to the login credentials you use to log in to Home Assistant or to log in to the computer with which you will use Samba share.
-2. Save the configuration.
-3. Start the add-on.
-4. Check the add-on log output to see the result.
+2. Review the enabled shares. Disable any you do not plan to use. Shares can be re-enabled later if needed.
 
 ## Connection
 
 If you are on Windows you use `\\<IP_ADDRESS>\`, if you are on MacOS you use `smb://<IP_ADDRESS>` to connect to the shares.
 
-This addon exposes the following directories over smb (samba):
+This app exposes the following directories over smb (samba):
 
 Directory | Description
 -- | --
-`addons` | This is for your local add-ons.
-`addon_configs` | This is for the configuration files of your add-ons.
+`addons` | This is for your local apps.
+`addon_configs` | This is for the configuration files of your apps.
 `backup` | This is for your backups.
 `config` | This is for your Home Assistant configuration.
 `media` | This is for local media files.
-`share` | This is for your data that is shared between add-ons and Home Assistant.
+`share` | This is for your data that is shared between apps and Home Assistant.
 `ssl` | This is for your SSL certificates.
 
 ## Configuration
 
-Add-on configuration:
+App configuration:
 
 ```yaml
 workgroup: WORKGROUP
+local_master: true
 username: homeassistant
 password: YOUR_PASSWORD
+enabled_shares:
+  - addons
+  - addon_configs
+  - backup
+  - config
+  - media
+  - share
+  - ssl
 allow_hosts:
   - 10.0.0.0/8
   - 172.16.0.0/12
@@ -58,6 +65,10 @@ compatibility_mode: false
 
 Change WORKGROUP to reflect your network needs.
 
+### Option: `local_master` (required)
+
+Enable to try and become a local master browser on a subnet.
+
 ### Option: `username` (required)
 
 The username you would like to use to authenticate with the Samba server.
@@ -65,6 +76,10 @@ The username you would like to use to authenticate with the Samba server.
 ### Option: `password` (required)
 
 The password that goes with the username configured for authentication.
+
+### Option: `enabled_shares` (required)
+
+List of Samba shares that will be accessible. Any shares removed or commented out of the list will not be accessible.
 
 ### Option: `allow_hosts` (required)
 
@@ -79,11 +94,25 @@ from littering the share with temporary hidden files
 ### Option: `compatibility_mode`
 
 Setting this option to `true` will enable old legacy Samba protocols
-on the Samba add-on. This might solve issues with some clients that cannot
+on the Samba app. This might solve issues with some clients that cannot
 handle the newer protocols, however, it lowers security. Only use this
 when you absolutely need it and understand the possible consequences.
 
 Defaults to `false`.
+
+### Option: `apple_compatibility_mode`
+
+Enable Samba configurations to improve interoperability with Apple devices.
+This can cause issues with file systems that do not support xattr such as exFAT.
+
+Defaults to `true`.
+
+### Option: `server_signing`
+
+Configure the SMB server signing requirement. This option can improve security by requiring message signing, which helps prevent man-in-the-middle attacks.
+Refer to the man page for smb.conf for detailed information about the values: **default**, **auto**, **mandatory**, and **disabled**.
+
+Defaults to `default`.
 
 ## Support
 

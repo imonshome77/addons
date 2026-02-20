@@ -9,9 +9,7 @@ RUN apk add --no-cache \
     pwgen
 
 ENV \
-    LD_PRELOAD="/usr/local/lib/libjemalloc.so.2" \
-    S6_SERVICES_GRACETIME=18000 \
-    MARIADB_AUTO_UPGRADE=1
+    LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
 
 # Copy data
 COPY rootfs /
